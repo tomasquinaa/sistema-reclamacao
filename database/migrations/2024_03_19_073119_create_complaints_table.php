@@ -22,12 +22,6 @@ return new class extends Migration
 
             $table->foreign('client_id')->references('id')->on('clients');
         });
-
-        // Altera os campos para serem nullable
-        Schema::table('complaints', function (Blueprint $table) {
-            $table->timestamp('updated_at')->nullable()->change();
-            $table->timestamp('deleted_at')->nullable()->change();
-        });
     }
 
 
